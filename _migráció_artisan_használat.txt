@@ -1,0 +1,18 @@
+Ezt a következőképpen használhatod:
+
+Migráció: https://teoldalad.hu/artisan.php?key=valami_titkos_kulcs_amit_csak_te_tudsz&command=migrate
+Seeder futtatása: https://teoldalad.hu/artisan.php?key=valami_titkos_kulcs_amit_csak_te_tudsz&command=db:seed
+Cache törlése: https://teoldalad.hu/artisan.php?key=valami_titkos_kulcs_amit_csak_te_tudsz&command=cache:clear
+
+4. Biztonsági megjegyzések
+
+Nagyon fontos, hogy miután elvégezted a szükséges műveleteket, töröld ezeket a fájlokat a szerverről!
+Használj erős, egyedi titkos kulcsot a ?key= paraméternél
+Lehetőleg IP-címre korlátozd a hozzáférést, ha a tárhelyed támogatja
+
+
+5. Alternatív módszer néhány tárhely-szolgáltatónál
+Egyes tárhely-szolgáltatók, például a cPanel rendelkeznek SSH hozzáféréssel vagy legalább egy "Terminal" vagy "Command Line" funkcióval a vezérlőpulton. Ha ez elérhető, használd azt a migrációk futtatásához:
+bash
+
+

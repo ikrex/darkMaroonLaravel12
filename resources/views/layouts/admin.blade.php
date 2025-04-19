@@ -35,15 +35,22 @@
                             Felhasználók
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.videos.*') ? 'active' : '' }}" href="{{ route('admin.videos.index') }}">
+                            <i class="bi bi-film"></i> Tanfolyam videók
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.contact_info.*') ? 'active' : '' }}"
+                            href="{{ route('admin.contact_info.edit') }}">
+                            Lábléc szerkesztése
+                        </a>
+                    </li>
                 </ul>
 
 
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('admin.contact_info.*') ? 'active' : '' }}"
-                        href="{{ route('admin.contact_info.edit') }}">
-                        Lábléc szerkesztése
-                    </a>
-                </li>
 
             </div>
         </div>

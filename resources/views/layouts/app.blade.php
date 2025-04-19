@@ -27,7 +27,7 @@
     <!-- Stanford stílusú navigáció -->
     <nav class="navbar navbar-expand-lg stanford-navbar navbar-sticky">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Balázs Bettina</a>
+            <span style="text-align: center;"><a class="navbar-brand" href="{{ route('home') }}">MSC Akadémia<br><small style="font-size: 14px;">Caritas. Libertas. Unitas.</small></a></span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

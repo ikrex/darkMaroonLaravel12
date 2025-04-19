@@ -35,6 +35,15 @@ Route::post('/registration', [App\Http\Controllers\RegistrationController::class
 Route::post('/change-language', [App\Http\Controllers\RegistrationController::class, 'changeLanguage'])->name('change.language');
 
 
+
+// Tanfolyam videó route-ok a frontend számára
+Route::get('/course/videos', [App\Http\Controllers\CourseVideoController::class, 'index'])->name('course.videos');
+Route::get('/course/videos/{id}', [App\Http\Controllers\CourseVideoController::class, 'show'])->name('course.videos.show');
+Route::get('/course/videos/{id}/download', [App\Http\Controllers\CourseVideoController::class, 'download'])->name('course.videos.download')->middleware('auth');
+Route::get('/course/videos/{id}/stream', [App\Http\Controllers\CourseVideoController::class, 'stream'])->name('course.videos.stream');
+
+
+
 // Authentikáció
 Auth::routes();
 
@@ -80,6 +89,21 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
 
 
+    // Course Video kezelés
+    Route::resource('videos', App\Http\Controllers\Admin\CourseVideoController::class)->names([
+        'index' => 'admin.videos.index',
+        'create' => 'admin.videos.create',
+        'store' => 'admin.videos.store',
+        'edit' => 'admin.videos.edit',
+        'update' => 'admin.videos.update',
+        'show' => 'admin.videos.show',
+        'destroy' => 'admin.videos.destroy',
+    ]);
+    Route::post('videos/{video}/toggle-active', [App\Http\Controllers\Admin\CourseVideoController::class, 'toggleActive'])->name('admin.videos.toggle-active');
+    Route::post('videos/{video}/toggle-downloadable', [App\Http\Controllers\Admin\CourseVideoController::class, 'toggleDownloadable'])->name('admin.videos.toggle-downloadable');
+
+
 });
+
 
 

@@ -85,7 +85,7 @@ class PageController extends Controller
 
     public function bemutatkozas()
     {
-        $content = $this->getSection('bemutatkozas');
+        $content = $this->getSection('rolam');
         return view('bemutatkozas', compact('content'));
     }
 
